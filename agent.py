@@ -78,9 +78,10 @@ class Agent(BaseUser):
 
     def serializer(self):
         data = self.__dict__
+        print(data)
         data.pop('properties_list')
         data.pop('deal_list')
-        data.pop('has_access')
+        data.pop('_Agent__has_access', None)
         return data
 
     def check_password(self, password):
